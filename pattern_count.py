@@ -41,8 +41,7 @@ def pattern_count():
 
     # Count the occurrences
     count = 0
-    i = 0
-
+    
     # Pattern is expected to be shorter than text
     if pattern == '' or (len(text) < len(pattern)):
         return 0
@@ -50,10 +49,16 @@ def pattern_count():
         # The search should stop when the last portion of
         # text to analyze is equal to the length of pattern.
         # The next slice would give a text shorter than pattern.
+        for i in range(len(text) - len(pattern) + 1):
+            if pattern == text[i:i + len(pattern)]:
+                count += 1
+
+        '''
         while(i < (len(text) - len(pattern) + 1)):
             if pattern == text[i:i + len(pattern)]:
                 count += 1
             i += 1
+        '''
     
     if count == given_output:
         return count
