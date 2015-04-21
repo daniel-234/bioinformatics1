@@ -3,7 +3,8 @@ def pattern_count(text, pattern):
 
     Return how many times a given pattern appears in text. The program
     accounts for overlapping occurrences.
-    Assume len(text) > 0.
+
+    Precondition: len(text) > 0
 
     >>> pattern_count('GCGCG', '')
     0
