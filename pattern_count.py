@@ -52,13 +52,6 @@ def pattern_count():
         for i in range(len(text) - len(pattern) + 1):
             if pattern == text[i:i + len(pattern)]:
                 count += 1
-
-        '''
-        while(i < (len(text) - len(pattern) + 1)):
-            if pattern == text[i:i + len(pattern)]:
-                count += 1
-            i += 1
-        '''
     
     if count == given_output:
         return count
