@@ -30,18 +30,48 @@ def pattern_count(text, pattern):
     return count
 
 
-def frequent_words(text, k):
-    ''' (str, int) -> str
+def frequent_words():
+    ''' (file open for reading) -> list
 
-    Return all most frequent k-mers in text.
+    Return a list of all most frequent k-mers in a given dataset.
 
-    Precondition: k > 0
-    
-    >>> frequent_words('ACTGT', 1)
-    T
-    >>> frequent_words('ACGTTGCATGTCGCATGATGCATGAGAGCT', 4)
-    CATG GCAT
+    Precondition: Any given dataset should have 4 lines:                
+                    line 1 contains the word 'Input';
+                    line 2 contains the text to analyze;
+                    line 3 contains the value of k;
+                    line 4 contains the word 'Output';
+                    line 5 contains the expected result. 
+        
     '''
+
+    file_name = input("Enter file or hit enter to use a sample dataset: ")
+
+    if len(file_name) < 1 : file_name = "frequentWords.txt"
+    dataset = open(file_name, 'r')
+
+    # Make a list of the 5 lines
+    lines = dataset.readlines()
+    
+    dataset.close()
+
+    # Take line 2 as the text to analyze.
+    # Then find the index of the first escape character
+    # and remove it from the string.
+    text = (lines[1])[:lines[1].find('/')]
+
+    # Take line k from line 3.
+    # Find the index of the first escape character
+    # and remove it from the string.
+    # Then cast the result to have an integer number.
+    '''
+    k = 2
+    print(lines[0])
+    print(lines[1])
+    print(lines[2])
+    print(lines[3])
+    print(lines[4])
+    '''
+    k = int((lines[2])[:lines[2].find('/')])
 
     # a list to store the most frequent words
     fPatterns = []
