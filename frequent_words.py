@@ -63,14 +63,7 @@ def frequent_words():
     # Find the index of the first escape character
     # and remove it from the string.
     # Then cast the result to have an integer number.
-    '''
-    k = 2
-    print(lines[0])
-    print(lines[1])
-    print(lines[2])
-    print(lines[3])
-    print(lines[4])
-    '''
+    
     k = int((lines[2])[:lines[2].find('/')])
 
     # a list to store the most frequent words
